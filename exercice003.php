@@ -51,12 +51,19 @@ endfor;
 <h3>Exercice 009</h3>
 
 <?php
-$num = rand(1, 20); 
 
-if ($num >=15){
-    echo "<p>Le nombre choisi est : $num</p>"; 
-}
-else 
+$essais = 0;
+do {
+    $essais++ ;
+    $num = rand(1, 20);
+    if ($num <=15)
+    echo "<p>Essai $essais : $num est trop petit (<16) </p>";
+    
+
+}  
+
+while ($num <= 15);
+echo"<p>Le nombre choici est : $num </p>";
 ?>
 
 
