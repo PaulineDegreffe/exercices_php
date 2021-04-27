@@ -66,6 +66,61 @@ while ($num <= 15);
 echo"<p>Le nombre choici est : $num </p>";
 ?>
 
+<h3>Exercice 010</h3>
+
+<?php
+
+$noteDeGuy = [];
+$notes = 0;
+
+
+do {
+$notes++ ;
+$num = rand(1,20);
+$noteDeGuy['Note N°'.$notes] = $num;
+}
+
+while (count($noteDeGuy)<20);
+print_r($noteDeGuy);
+
+$ligne = count($noteDeGuy);
+$somme = array_sum($noteDeGuy);
+$noteMax = 20;
+$totalMax = $ligne * $noteMax;
+$moyenne = $somme / $totalMax  * 100;
+
+if ($moyenne <=30) {
+echo"<p>La moyenne de l'année est de $moyenne ça ira mieux l'année prochaine !!</p>";
+}
+
+
+if ($moyenne >=30 && $moyenne <=50) {
+echo"<p>La moyenne de l'année est de $moyenne Voilà pourquoi il ne faut pas regarder des stream jv durant les cours !!</p>";
+}
+
+if ($moyenne >=50 && $moyenne <=60){
+    echo"<p>La moyenne de l'année est de $moyenne Pas de bol tu y étais presque !!</p>";
+}
+    
+    
+    if ($moyenne >=60 && $moyenne <=70){
+        echo"<p>La moyenne de l'année est de $moyenne Pas de bol tu y étais presque !!</p>";
+    }
+
+    if ($moyenne >=70 && $moyenne <=80){
+        echo"<p>La moyenne de l'année est de $moyenne Pas de bol tu y étais presque !!</p>";
+    }
+
+    if ($moyenne >=80 && $moyenne <=90){
+        echo"<p>La moyenne de l'année est de $moyenne Pas de bol tu y étais presque !!</p>";
+    }
+
+    if ($moyenne >=90 && $moyenne <=100){
+        echo"<p>La moyenne de l'année est de $moyenne Pas de bol tu y étais presque !!</p>";
+    }
+
+
+?>
 
 </body>
 </html>
