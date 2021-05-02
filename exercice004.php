@@ -36,5 +36,40 @@ delta(2,7,6);
 
 <h2>Exercice 012</h2>
 
+<?php
+
+//Prenez deux personnes qui disposent d’un nom, d’un âge et d’un sexe.
+//Représenter ces personnes dans deux tableaux multidimensionnels (un pour chaque personne).
+//Créer une fonction permettant de réaliser l’affichage d’une personne
+//Affichez les deux personnes sur votre page html
+
+$personne1 = [
+    'nom' => 'Andrea',
+    'age' => 32,
+    'sexe' => 'homme',
+];
+$personne2 = [
+    'nom' => 'Pauline',
+    'age' => 27,
+    'sexe' => 'femme',
+];
+
+function identite ($personne) {
+    
+    foreach ($personne as $key => $valeur){
+        echo "<p>$key : $valeur</p>";
+    }
+}
+
+identite($personne1);
+
+echo"<p>-----------------------------------</p>";
+
+identite($personne2);
+    
+?>
+
+<h2>Exercie 013</h2>
+
 </body>
 </html>
