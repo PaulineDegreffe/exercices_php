@@ -11,26 +11,40 @@
     <h2>Exercice 011</h2>
 <?php
 
+// Si Δ < 0 , rien de plus simple : il n'y a pas de solution.
+// Si Δ = 0, il y a une seule solution à l'équation : c'est x= -b/(2a)
+// Si Δ > 0 il y a deux solutions qui sont x1 = (-b-√Δ)/(2a) et x2= (-b+√Δ)/(2a)
 
-
-function delta ($a,$b,$c)
+function delta ()
 {
+    $a = rand(1,20);
+    $b= rand(1,20);
+    $c= rand(1,20);
     // Calcul du Delta  Δ = b² - 4ac
     $delta = ($b * $b) -  (4 * $a * $c);
     echo "<p>Les nombres tirés au sort sont </p>" ;
     echo "<p>a= $a, b= $b, et c= $c</p>";
-    echo "<p> Le delta obteny est : ($a X $a) - (4 X $b X $c) = $delta </p>";
-
+    echo "<p> Le delta obtenu est : ($a X $a) - (4 X $b X $c) = $delta </p>";
+    
     $x = - $b / (2 * $a);
     $racineA = (- ($b) - sqrt($delta) ) / (2 * $a) ;
     $racineB = (- ($b) + sqrt($delta) ) / (2 * $a) ;
     echo "<h3>racine A = (- $a - √$delta)/($a * $a) => $racineA  </h3>";
     echo "<h3>racine B = (- $a + √$delta)/($a * $a) => $racineB  </h3>";
     
-
+    
+    if ($delta <0){
+    echo"<p>Il n'y pas de solution</p>";
+    }
+    else if ($delta == 0) {
+        echo"<p>il y a une seule solution à l'équation : c'est $x</p>";
+    }
+    else if ($delta >0) {
+        echo"<p>il y a deux solutions qui sont $racineA et $racineB</p>";
+    }
 }
 
-delta(2,7,6);
+delta();
 
 ?>
 
@@ -67,9 +81,53 @@ echo"<p>-----------------------------------</p>";
 
 identite($personne2);
     
+
+
+echo "<h2>Exercie 013</h2>";
+
+
+//A partir de l’exercice précédent: ajoutez deux nouvelles personnes.
+//Créez un nouveau tableau qui va contenir les tableau des 4 personnes précédemment créés
+//Affichez sur votre page html
+
+$identite = array(
+
+$personne1,
+$personne2,
+$personne3 = [
+    'nom' => 'Camille',
+    'age' => 18,
+    'sexe' => 'femme',
+],
+$personne4 = [
+    'nom' => 'Mateo',
+    'age' => 19,
+    'sexe' => 'homme',
+]
+
+);
+
+
+    
+foreach ($identite as $key ){
+    identite($value);
+
+    echo "------------------<br>";
+}
+
+
 ?>
 
-<h2>Exercie 013</h2>
+<h2>Exercice 14</h2>
+
+<?php
+
+//A partir de l’exercice précédent: rajouter un tableau de note 4 note aléatoire de 1 à 20 pour chaque personne
+//Rajouter une fonction pour calculer la moyenne des notes
+//Affichez sur le html chacune des personnes, leur note et leur moyenne
+//BONUS: donner un peu de style à l’affichage html en insérant un peu de css
+
+?>
 
 </body>
 </html>
