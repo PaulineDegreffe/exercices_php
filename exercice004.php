@@ -125,14 +125,64 @@ foreach ($identite as $personne){
 
 <h2>Exercice 14</h2>
 
+<div class="tableaux">
+
 <?php
 
 //A partir de l’exercice précédent: rajouter un tableau de note 4 note aléatoire de 1 à 20 pour chaque personne
 //Rajouter une fonction pour calculer la moyenne des notes
 //Affichez sur le html chacune des personnes, leur note et leur moyenne
 //BONUS: donner un peu de style à l’affichage html en insérant un peu de css
+$identite = [
+    $personne1 = [
+        'nom' => 'Andrea',
+        'age' => 32,
+        'sexe' => 'homme',
+    ],
+    $personne2 = [
+        'nom' => 'Pauline',
+        'age' => 27,
+        'sexe' => 'femme',
+    ],
+    $personne3 = [
+        'nom' => 'Camille',
+        'age' => 18,
+        'sexe' => 'femme',
+    ],
+    $personne4 = [
+    'nom' => 'Mateo',
+    'age' => 19,
+    'sexe' => 'homme',
+    ]
+];
 
+function attributionNotes() {
+    $notes = [
+        1=> rand(1,20),
+        2=> rand(1,20),
+        3=> rand(1,20),
+        4=> rand(1,20)
+    ];
+    
+    $total = 0;
+
+    foreach($notes as $key => $note) {
+        echo "Note $key : $note<br>";
+        $total = $total + $note;
+    }
+
+    $moyenne = $total / sizeof($notes);
+    echo "La moyenne est égale à : $moyenne<br>";
+}
+
+foreach ($identite as $personne){
+    foreach ($personne as $key => $value){
+        echo $key.":".$value."<br>";
+    }
+    attributionNotes();
+    echo "------------------<br>";
+}
 ?>
-
+</div>
 </body>
 </html>
