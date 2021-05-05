@@ -29,18 +29,19 @@ function delta ()
     $x = - $b / (2 * $a);
     $racineA = (- ($b) - sqrt($delta) ) / (2 * $a) ;
     $racineB = (- ($b) + sqrt($delta) ) / (2 * $a) ;
-    echo "<h3>racine A = (- $a - √$delta)/($a * $a) => $racineA  </h3>";
-    echo "<h3>racine B = (- $a + √$delta)/($a * $a) => $racineB  </h3>";
-    
     
     if ($delta <0){
     echo"<p>Il n'y pas de solution</p>";
     }
     else if ($delta == 0) {
         echo"<p>il y a une seule solution à l'équation : c'est $x</p>";
+        echo "<h3>racine A = (- $a - √$delta)/($a * $a) => $racineA  </h3>";
+        echo "<h3>racine B = (- $a + √$delta)/($a * $a) => $racineB  </h3>";
     }
     else if ($delta >0) {
         echo"<p>il y a deux solutions qui sont $racineA et $racineB</p>";
+        echo "<h3>racine A = (- $a - √$delta)/($a * $a) => $racineA  </h3>";
+        echo "<h3>racine B = (- $a + √$delta)/($a * $a) => $racineB  </h3>";
     }
 }
 
@@ -53,7 +54,7 @@ delta();
 <?php
 
 //Prenez deux personnes qui disposent d’un nom, d’un âge et d’un sexe.
-//Représenter ces personnes dans deux tableaux multidimensionnels (un pour chaque personne).
+//Représenter ces personnes dans deux tableaux multidimensionnels un pour chaque personne.
 //Créer une fonction permettant de réaliser l’affichage d’une personne
 //Affichez les deux personnes sur votre page html
 
@@ -81,40 +82,44 @@ echo"<p>-----------------------------------</p>";
 
 identite($personne2);
     
+?>
 
+<h2>Exercie 013</h2>
 
-echo "<h2>Exercie 013</h2>";
-
+<?php
 
 //A partir de l’exercice précédent: ajoutez deux nouvelles personnes.
 //Créez un nouveau tableau qui va contenir les tableau des 4 personnes précédemment créés
 //Affichez sur votre page html
 
-$identite = array(
-
-$personne1,
-$personne2,
-$personne3 = [
-    'nom' => 'Camille',
-    'age' => 18,
-    'sexe' => 'femme',
-],
-$personne4 = [
+$identite = [
+    $personne1 = [
+        'nom' => 'Andrea',
+        'age' => 32,
+        'sexe' => 'homme',
+    ],
+    $personne2 = [
+        'nom' => 'Pauline',
+        'age' => 27,
+        'sexe' => 'femme',
+    ],
+    $personne3 = [
+        'nom' => 'Camille',
+        'age' => 18,
+        'sexe' => 'femme',
+    ],
+    $personne4 = [
     'nom' => 'Mateo',
     'age' => 19,
     'sexe' => 'homme',
-]
-
-);
-
-
-    
-foreach ($identite as $key ){
-    identite($value);
-
+    ]
+];
+foreach ($identite as $personne){
+    foreach ($personne as $key => $value){
+        echo $key.":".$value."<br>";
+    }
     echo "------------------<br>";
 }
-
 
 ?>
 
