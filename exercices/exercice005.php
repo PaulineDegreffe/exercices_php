@@ -1,16 +1,16 @@
-<?php 
-    $titre = "Exercice005 - formulaire 1/2";
-    require "../common/template.php" 
-    ?>
- 
+<?php
+$titre = "Exercice005 - traitement des formulaires";
+require "../common/template.php"
+?>
+
 <div>
     <?php
 
-    if(isset($_GET["prenom"]) && isset($_GET["age"])):
-    $prenom = $_GET["prenom"];
-    $age = $_GET["age"];
-    echo "Bonjour $prenom, tu as $age ans</br>";
-    echo "Cette section a été générée par la méthode GET</br>";
+    if (isset($_GET["prenom"]) && isset($_GET["age"])) :
+        $prenom = $_GET["prenom"];
+        $age = $_GET["age"];
+        echo "Bonjour $prenom, tu as $age ans</br>";
+        echo "Cette section a été générée par la méthode GET</br>";
     endif
     ?>
 
@@ -31,13 +31,13 @@
 
 <div>
     <?php
-   if(isset($_POST["prenom"]) && isset($_POST["age"])):
+    if (isset($_POST["prenom"]) && isset($_POST["age"])) :
         $prenom = htmlspecialchars($_POST["prenom"]);
         $age = htmlspecialchars($_POST["age"]);
 
         echo "<h4>Version saine</h2>
             <p>Bonjour $prenom, tu as $age ans.</p>";
-    
+
     endif
 
     ?>

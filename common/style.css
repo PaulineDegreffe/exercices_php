@@ -1,22 +1,28 @@
-body{
+body {
     margin: 0;
     padding: 0rem;
     box-sizing: border-box;
 }
 
+
 /* container général */
-.principal{
+
+.principal {
     padding: 1rem;
 }
 
+
 /* balise classique */
-a{
+
+a {
     text-decoration: none!important;
     color: burlywood;
 }
 
+
 /* Mise en forme navbar */
-.navClass{
+
+.navClass {
     font-family: 'Fredoka One', cursive;
     color: white;
     background-color: black;
